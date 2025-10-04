@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOS List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="app-title">TODOS List</div>
+        <div class="task-summary">
+            <span id="total-tasks">4 Task</span>
+            <span id="in-progress-tasks">2 In progress</span>
+            <span id="done-tasks">2 Done</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="task-board">
+            <div class="task-header">
+                <h2>Task</h2>
+                <button id="show-create-task-form">+</button>
+            </div>
+
+            <div id="create-task-form" class="task-card create-form" style="display: none;">
+                <input type="text" id="task-name-input" placeholder="Task name">
+                <div class="form-row">
+                    <select id="task-status-input">
+                        <option value="Not Started">Not Started</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Done">Done</option>
+                    </select>
+                    <select id="task-priority-input">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <input type="date" id="task-due-date-input" value="1997-06-16">
+                <button id="create-task-btn">Create</button>
+            </div>
+            
+            <div id="task-list-container">
+                </div>
+
+        </section>
+
+        <section class="do-now-area">
+            <h2>Do Now</h2>
+            <div id="do-now-container" class="task-card">
+                <p>No task selected for "Do Now".</p>
+                </div>
+        </section>
+        
+        <section class="final-report-area">
+            <h2>Final Report</h2>
+            <div id="final-report-container">
+                </div>
+        </section>
+    </main>
+
+    <div id="timer-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Set Timer</h3>
+            <span class="close-btn">&times;</span>
+            <div class="timer-inputs">
+                <input type="number" id="timer-hrs" placeholder="hrs" min="0" max="99">
+                <span>:</span>
+                <input type="number" id="timer-min" placeholder="min" min="0" max="59">
+                <span>:</span>
+                <input type="number" id="timer-sec" placeholder="sec" min="0" max="59">
+            </div>
+            <button id="start-timer-modal-btn">Start Timer</button>
+        </div>
+    </div>
+    
+    <div id="task-in-progress-view" class="full-view" style="display: none;">
+        <div class="progress-header">
+            &larr; Task in progress
+        </div>
+        <div class="progress-card task-card">
+            <h3 id="progress-task-name">Blockchain</h3>
+            <div class="progress-task-details">
+                <p>Due Date: <span id="progress-due-date">16/15/1997</span></p>
+            </div>
+            <div class="timer-display" id="active-timer-display">24 : 24 : 24</div>
+            <button id="task-done-btn">✔ Task Done</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

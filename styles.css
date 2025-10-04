@@ -1,0 +1,244 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f0f0f0; 
+}
+
+
+.app-header {
+    background-color: #4b0082; 
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #6a5acd;
+}
+
+.app-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.task-summary span {
+    margin-left: 20px;
+    font-size: 1.1em;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 20px;
+    padding: 20px;
+}
+
+.task-header, .do-now-area h2, .final-report-area h2 {
+    
+    background-color: #6a5acd; 
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.task-header h2 {
+    margin: 0;
+}
+
+#show-create-task-form {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 1.5em;
+    line-height: 1;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.task-card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.create-form input[type="text"], 
+.create-form select, 
+.create-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.form-row select {
+    flex: 1;
+}
+
+button {
+    background-color: #4b0082;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #6a5acd;
+}
+
+
+.task-item {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+
+.priority-high { color: red; font-weight: bold; }
+.priority-medium { color: orange; font-weight: bold; }
+.priority-low { color: green; font-weight: bold; }
+
+
+.task-status-done { background-color: #d4edda; color: #155724; }
+.task-status-inprogress { background-color: #fff3cd; color: #856404; }
+
+
+.do-now-area .task-card h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#set-timer-btn, #create-task-btn, #start-timer-modal-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.report-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.report-item h4 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.timer-inputs input {
+    width: 60px;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.full-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    z-index: 100;
+    padding: 20px;
+}
+
+.progress-header {
+    background-color: #4b0082;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.progress-card {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 4em;
+    color: #4b0082;
+    background-color: #eee;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+#task-done-btn {
+    background-color: green;
+    padding: 15px 30px;
+    font-size: 1.2em;
+}
+#task-done-btn:hover {
+    background-color: darkgreen;
+}
